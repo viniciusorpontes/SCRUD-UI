@@ -1,0 +1,59 @@
+<div class="content-wrapper">
+    <div class="container">
+      <div class="ui-g">
+        <form autocomplete="off" (ngSubmit)="pesquisar()">
+          <div class="ui-g-12">
+            <h1>Estados</h1>
+          </div>
+  
+          <div class="ui-g-12 ui-fluid">
+            <h4>Nome do Estado</h4>
+            <input pInputText type="text" name="nome" [(ngModel)]="filtro.nome">
+          </div>
+  
+          <div class="ui-g-12">
+            <button pButton type="submit" label="Pesquisar"></button>
+          </div>
+        </form>
+      </div>
+      <div class="ui-g">
+        <div class="ui-g-12">
+          <p-table [value]="estados" [paginator]="true" [rows]="filtro.itensPorPagina" [totalRecords]="totalRegistros"
+            [lazy]="true" [responsive]="true" (onLazyLoad)="aoMudarPagina($event)" #tabela>
+            <ng-template pTemplate="header">
+              <tr>
+                <th class="col-id">Id</th>
+                <th>Nome do Estado</th>
+                <th class="col-acoes-header">Ações</th>
+  
+              </tr>
+            </ng-template>
+            <ng-template pTemplate="body" let-est>
+              <tr>
+                <td class="col-id">{{est.id}}</td>
+                <td>{{est.nome}}</td>
+                <td class="col-acoes">
+                  <button pButton icon="pi pi-pencil" pTooltip="Editar" tooltipPosition="top"
+                    [routerLink]="['/estados', est.id]"></button>
+                  &nbsp;
+                  <button pButton icon="pi pi-trash" pTooltip="Excluir" tooltipPosition="top"
+                    (click)="excluir(est)"></button>
+                </td>
+              </tr>
+            </ng-template>
+            <ng-template pTemplate="emptymessage">
+              <tr>
+                <td colspan="3">
+                  Nenhum estado encontrado.
+                </td>
+              </tr>
+            </ng-template>
+          </p-table>
+        </div>
+  
+        <div class="ui-g-12">
+          <a pButton label="Novo Estado" routerLink="/estados/novo"></a>
+        </div>
+      </div>
+    </div>
+  </div>

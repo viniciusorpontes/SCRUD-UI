@@ -1,0 +1,72 @@
+<div class="content-wrapper">
+    <div class="container">
+      <form #f="ngForm" autocomplete="off" (ngSubmit)="salvar(f)">
+        <div class="ui-g">
+          <div class="ui-g-12">
+            <h1>{{ editando ? 'Alterar Cliente' : 'Novo Cliente' }}</h1>
+          </div>
+  
+          <div class="ui-g-12 ui-md-6 ui-fluid">
+            <h5>Nome do Cliente</h5>
+            <input pInputText type="text" name="nome" [(ngModel)]="cliente.nome" #nome="ngModel">
+          </div>
+
+          <div class="ui-g-12 ui-md-6 ui-fluid">
+            <h5>E-Mail</h5>
+            <input pInputText type="text" name="email" [(ngModel)]="cliente.email" #email="ngModel">
+          </div>
+
+          <div class="ui-g-12 ui-md-6 ui-fluid">
+            <h5>CPF ou CNPJ</h5>
+            <input pInputText type="text" name="cpfoucnpj" [(ngModel)]="cliente.cpfoucnpj" #cpfoucnpj="ngModel">
+          </div>
+
+          <div class="ui-g-12 ui-md-6 ui-fluid">
+            <h5>Telefone</h5>
+            <input pInputText type="text" name="telefone" [(ngModel)]="cliente.telefone" #telefone="ngModel">
+          </div>
+          
+          <div class="ui-g-12 ui-md-6 ui-fluid">
+            <h5>Logradouro</h5>
+            <input pInputText type="text" name="logradouro" [(ngModel)]="cliente.logradouro" #logradouro="ngModel">
+          </div>
+
+          <div class="ui-g-12 ui-md-6 ui-fluid">
+            <h5>Número</h5>
+            <input pInputText type="text" name="numero" [(ngModel)]="cliente.numero" #numero="ngModel">
+          </div>
+
+          <div class="ui-g-12 ui-md-6 ui-fluid">
+            <h5>Complemento</h5>
+            <input pInputText type="text" name="complemento" [(ngModel)]="cliente.complemento" #complemento="ngModel">
+          </div>
+
+          <div class="ui-g-12 ui-md-6 ui-fluid">
+            <h5>Bairro</h5>
+            <input pInputText type="text" name="bairro" [(ngModel)]="cliente.bairro" #bairro="ngModel">
+          </div>
+
+          <div class="ui-g-12 ui-md-6 ui-fluid">
+            <h5>CEP</h5>
+            <input pInputText type="text" name="cep" [(ngModel)]="cliente.cep" #cep="ngModel">
+          </div>
+  
+          <div class="ui-g-9 ui-md-6 ui-fluid">
+            <h5>Cidade</h5>
+            <p-dropdown name="cidade" placeholder="Selecione uma Cidade" [filter]="true" [options]="cidades"
+              #cidade="ngModel" [(ngModel)]="cliente.cidade.id" name="cidadeSelecionada">
+            </p-dropdown>
+          </div>
+
+          <div class="ui-g-12">
+            <button pButton type="submit" label="Salvar"></button>
+            &nbsp;
+            <button pButton type="button" label="Novo" class="ui-button-info"></button>
+            &nbsp;
+            <a routerLink="/clientes">Voltar para Pesquisa</a>
+          </div>
+  
+        </div>
+      </form>
+    </div>
+  </div>

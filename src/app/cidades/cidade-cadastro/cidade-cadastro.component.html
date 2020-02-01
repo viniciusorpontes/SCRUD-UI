@@ -1,0 +1,32 @@
+<div class="content-wrapper">
+    <div class="container">
+      <form #f="ngForm" autocomplete="off" (ngSubmit)="salvar(f)">
+        <div class="ui-g">
+          <div class="ui-g-12">
+            <h1>{{ editando ? 'Alterar Cidade' : 'Nova Cidade' }}</h1>
+          </div>
+  
+          <div class="ui-g-12 ui-md-6 ui-fluid">
+            <h5>Nome da Cidade</h5>
+            <input pInputText type="text" name="nome" [(ngModel)]="cidade.nome" #nome="ngModel">
+          </div>
+  
+          <div class="ui-g-9 ui-md-6 ui-fluid">
+            <h5>Estado</h5>
+            <p-dropdown name="estado" placeholder="Selecione um Estado" [filter]="true" [options]="estados"
+              #estado="ngModel" [(ngModel)]="cidade.estado.id" name="estadoSelecionado">
+            </p-dropdown>
+          </div>
+
+          <div class="ui-g-12">
+            <button pButton type="submit" label="Salvar"></button>
+            &nbsp;
+            <button pButton type="button" label="Novo" class="ui-button-info"></button>
+            &nbsp;
+            <a routerLink="/cidades">Voltar para Pesquisa</a>
+          </div>
+  
+        </div>
+      </form>
+    </div>
+  </div>

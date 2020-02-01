@@ -1,0 +1,44 @@
+@media (min-width: 1200px) {
+    .container{
+        width: 1100px;
+        margin: 0 auto;
+    }
+
+    .col-id-header{
+       width: 80px;
+    }
+
+    .col-id{
+       width: 80px;
+       text-align: center;
+    }
+
+    .col-preco-header{
+     width: 100px;
+     text-align: center;
+  }
+
+    .col-preco{
+     width: 100px;
+     text-align: center;
+  }
+
+    .col-categoria-header{
+     width: 200px;
+    }
+
+    .col-categoria{
+     width: 200px;
+  }
+    
+    .col-acoes-header{
+       width: 110px;
+       text-align: center;
+    }
+
+    .col-acoes{
+       width:80;
+       text-align: center;
+    }
+
+}

@@ -1,0 +1,37 @@
+<div class="content-wrapper">
+  <div class="container">
+    <form #f="ngForm" autocomplete="off" (ngSubmit)="salvar(f)">
+      <div class="ui-g">
+        <div class="ui-g-12">
+          <h1>{{ editando ? 'Alterar Produto' : 'Novo Produto' }}</h1>
+        </div>
+
+        <div class="ui-g-12 ui-md-6 ui-fluid">
+          <h5>Nome do Produto</h5>
+          <input pInputText type="text" name="nome" [(ngModel)]="produto.nome" #nome="ngModel">
+        </div>
+
+        <div class="ui-g-9 ui-md-6 ui-fluid">
+          <h5>Categoria</h5>
+          <p-dropdown name="categoria" placeholder="Selecione uma Categoria" [filter]="true" [options]="categorias"
+            #categoria="ngModel" [(ngModel)]="produto.categoria.id" name="categoriaSelecionada">
+          </p-dropdown>
+        </div>
+
+        <div class="ui-g-9 ui-md-6 ui-fluid">
+          <h5>Preço</h5>
+          <input pInputText type="number" name="preco" [(ngModel)]="produto.preco" #preco="ngModel">
+        </div>
+
+        <div class="ui-g-12">
+          <button pButton type="submit" label="Salvar"></button>
+          &nbsp;
+          <button pButton type="button" label="Novo" class="ui-button-info"></button>
+          &nbsp;
+          <a routerLink="/produtos">Voltar para Pesquisa</a>
+        </div>
+
+      </div>
+    </form>
+  </div>
+</div>
